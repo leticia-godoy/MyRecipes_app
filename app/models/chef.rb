@@ -1,0 +1,3 @@
+class Chef < ApplicationRecord
+
+end
