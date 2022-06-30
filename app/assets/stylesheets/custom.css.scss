@@ -4,23 +4,23 @@ $navbar-default-bg: #68D18C;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
- .jumbotron{
+.jumbotron{
     background-image: asset-url('cover-image.png');
     background-size: cover;
     height: 325px;
 }
 
- #logo {
+#logo {
     float: left;
     color: #333333;
     text-transform: uppercase;
     font-weight: bold;
 }
- #logo:hover {
-    color :black;
+#logo:hover {
+    color :#0A2C6C;
     text-decoration: none;
 }
- .center{
+.center{
     text-align: center;
 }
 
@@ -40,4 +40,23 @@ $navbar-default-bg: #68D18C;
     background-color: #68D18C;
     bottom: 0;
     text-decoration-style: wavy;
+}
+.description{
+    margin-top: 0;
+}
+.well a{
+    color: #0A2C6C;
+}
+.chef_info{
+    margin-top: 25px;
+}
+.colormatch a{
+    color:#0A2C6C;
+}
+#createNew{
+    margin-top: 30px;
+}
+#cancelNewRecipe{
+    margin-top: 10px;
+    margin-bottom: 150px;
 }
