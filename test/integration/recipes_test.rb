@@ -21,13 +21,15 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", recipe_path(@recipe2), text: @recipe2.name
   end
 
-  test "should get unique recipe" do
+  test "should get recipes to show" do
     get recipe_path(@recipe)
-    assert_template 'template/show'
+    assert_template 'recipes/show'
     assert_match @recipe.name, response.body
-    assert_match @user.description, response.body
+    assert_match @recipe.description, response.body
+    assert_match @recipe.sell_price, response.body
     assert_match @chef.chefs_name, response.body
-    assert_match @chef.email, response.body
+    assert_select "a[href=?]", edit_recipe_path(@recipe), text: "edit recipe"
+    assert_select "a[href=?]", recipe_path(@recipe), text: "Delete recipe"
   end
 
   test "create new valid recipe" do

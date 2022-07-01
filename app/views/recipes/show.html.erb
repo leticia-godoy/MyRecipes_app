@@ -1,19 +1,26 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 <div class="well col-md-8 col-md-offset-2">
-    <h4 class="center description"><strong>Description: </strong></h4>
-    <hr />
-    <%= simple_format(@recipe.description) %>
-    <hr />
-    <h5><strong>Selling Price: </strong><%= @recipe.sell_price %>g</h5>    
+        <h4 class="center description"><strong>Description: </strong></h4>
+        <hr />
+        <%= simple_format(@recipe.description) %>
+        <hr />
+        <h5><strong>Selling Price: </strong><%= @recipe.sell_price %>g</h5>    
 
-<div class= "pull-right">    
-    <p><strong>Created by:</strong></p>
-    <p class="center">
-        <%= link_to gravatar_for(@recipe.chef), recipes_path %>
-    </p>
-    <p>
-        <small class="center"><%= @recipe.chef.chefs_name.capitalize %></small>
-        <div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago </div>
-    </p>
+    <div class= "pull-right">    
+        <p><strong>Created by:</strong></p>
+        <p class="center">
+            <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+        </p>
+        <p>
+            <small class="center"><%= @recipe.chef.chefs_name.capitalize %></small>
+            <div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago </div>
+        </p>
+    </div>
+    <div class = "recipe-actions">
+        <%= link_to "Edit recipe", edit_recipe_path(@recipe), class:"btn btn-xs btn-info"%>
+        <%= link_to "Delete recipe", recipe_path(@recipe),
+                                    data: { turbo_method: :delete,
+                                        turbo_confirm: "Are you sure you want to delete recipe?"},
+                                    class:"btn btn-xs btn-warning"%>
     </div>
 </div>
