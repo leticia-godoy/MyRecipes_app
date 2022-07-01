@@ -17,10 +17,11 @@
         </p>
     </div>
     <div class = "recipe-actions">
-        <%= link_to "Edit recipe", edit_recipe_path(@recipe), class:"btn btn-xs btn-info"%>
+        <%= link_to "Edit recipe", edit_recipe_path(@recipe), class:"btn btn-xs btn-warning"%>
         <%= link_to "Delete recipe", recipe_path(@recipe),
                                     data: { turbo_method: :delete,
                                         turbo_confirm: "Are you sure you want to delete recipe?"},
-                                    class:"btn btn-xs btn-warning"%>
+                                    class:"btn btn-xs btn-danger"%>
+        <%= link_to "Return to recipes", recipes_path, class: "btn btn-xs btn-light"%>
     </div>
 </div>
