@@ -3,22 +3,22 @@
     <div class="row">
         <div class= "col-md-8 col-md-offset-2">
             <div class= "panel panel-danger">
-                <h2 class="panel-title">
-                <%= pluralize(@recipe.errors.count, "error")%>
-                <%= @recipe.class %> prohibited from being saved:
-                </h2>
-                <div class="panel-body">
-                    <ul>
-                        <% @recipe.errors.full_messages.each do |msg|%>
-                        <li><%= msg %></li>
-                        <% end %>
-                    </ul>
+                <div class= "panel-heading">
+                    <h2 class="panel-title">
+                    <%= pluralize(@recipe.errors.count, "error")%>
+                    <%= @recipe.class %> prohibited from being saved:
+                    </h2>
+                    <div class="panel-body">
+                        <ul>
+                            <% @recipe.errors.full_messages.each do |msg|%>
+                            <li><%= msg %></li>
+                            <% end %>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    
+    </div>   
 <% end %>
 
 <div class="row">
