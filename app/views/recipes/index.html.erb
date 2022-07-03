@@ -1,4 +1,10 @@
 
 <%= render 'shared/page_title', title: "All Recipes Saved"%>
 
+
 <%= render 'recipe', obj: @recipes %>
+
+<div align="center">
+    <%= link_to "Last Page", recipes_path(page: @page -1)%> |
+    <%= link_to "Next Page", recipes_path(page: @page +1)%>
+</div>

@@ -12,4 +12,8 @@
             </div>
         </ul>
     <% end %>
+    <div>
+        <%= link_to "Last Page", chefs_path(page: @page -1)%> |
+        <%= link_to "Next Page", chefs_path(page: @page +1)%>
+    </div>
 </div>

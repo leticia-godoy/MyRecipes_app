@@ -1,9 +1,12 @@
 class RecipesController < ApplicationController
 
+    
     before_action :set_recipe, only: [:show, :edit, :update]
+    RECIPES_PAGE = 5
     
     def index
-        @recipes = Recipe.all
+        @page = params.fetch(:page, 0).to_i
+        @recipes = Recipe.offset(@page * RECIPES_PAGE).limit(RECIPES_PAGE)
     end
 
     def show

@@ -1,8 +1,12 @@
 class ChefsController < ApplicationController
 
-    def index 
-        @chefs = Chef.all
+    RECIPES_PAGE = 5
+    
+    def index
+        @page = params.fetch(:page, 0).to_i
+        @chefs = Chef.offset(@page * RECIPES_PAGE).limit(RECIPES_PAGE)
     end
+
 
     def new
         @chef = Chef.new
