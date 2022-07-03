@@ -17,7 +17,7 @@
         </p>
     </div>
     <div class="recipe-actions">
-        <% if logged_in? %>
+        <% if logged_in? && current_chef == @recipe.chef %>
         <%= link_to "Edit recipe", edit_recipe_path(@recipe), class:"btn btn-xs btn-warning"%>
         <%= link_to "Delete recipe", recipe_path(@recipe),
                                     data: { turbo_method: :delete,

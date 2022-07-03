@@ -13,7 +13,16 @@
       <p>
         <span class="quiet"><small>Created 
         <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
-      </p> 
+      </p>
+      <% if logged_in? && current_chef == recipe.chef %>
+        <div class="recipe-actions">
+          <%= link_to "Edit recipe", edit_recipe_path(recipe), class:"btn btn-xs btn-warning"%>
+          <%= link_to "Delete recipe", recipe_path(recipe),
+                                    data: { turbo_method: :delete,
+                                        turbo_confirm: "Are you sure you want to delete recipe?"},
+                                    class:"btn btn-xs btn-danger"%>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>
