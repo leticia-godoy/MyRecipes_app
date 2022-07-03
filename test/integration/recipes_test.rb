@@ -3,9 +3,9 @@ require "test_helper"
 class RecipesTest < ActionDispatch::IntegrationTest
   
   def setup
-    @user = Chef.create!(chefs_name: "Andre", email: "andre@gmail.com",
+    @chef = Chef.create!(chefs_name: "Andre", email: "andre@gmail.com",
                         password: "password", password_confirmation: "password")
-    @recipe = Recipe.create(name: "Cheese Cauliflower",description: "It smells great!",sell_price: 300, chef: @user)
+    @recipe = Recipe.create(name: "Cheese Cauliflower",description: "It smells great!",sell_price: 300, chef: @chef)
     @recipe2 = Recipe.recipes.build(name: "Baked Fish",description: "Baked fish on a bed of herbs",sell_price: 100)
     @recipe2.save
   end
@@ -52,6 +52,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "reject invalid recipe submissions" do
+    sign_in_as(@chef,"password")
     get new_recipe_path
     assert_template 'recipes/new'
     assert_no_difference 'Recipe.count' do
