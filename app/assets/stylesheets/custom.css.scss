@@ -6,8 +6,31 @@ $navbar-default-bg: #68D18C;
 
 .jumbotron{
     background-image: asset-url('cover-image.png');
+    height: 330px;
+}
+
+#heading1{
+    background-image: asset-url('super-meal.png');
     background-size: cover;
-    height: 325px;
+    height: 20vh;
+}
+#heading2{
+    background-image: asset-url('autumns-bounty.png');
+    background-size: cover;
+    height: 20vh;
+}
+#heading3{
+    background-image: asset-url('Cranberry-recipe.png');
+    background-size: cover;
+    height: 20vh;
+}
+
+#dividor{
+    background-color: #ebc759;
+    color: #333333;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 25px;
 }
 
 #logo {
