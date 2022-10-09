@@ -9,7 +9,7 @@
     <div class="pull-right">
         <p><strong>Created by:</strong></p>
         <p class="center">
-            <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+            <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
         </p>
         <p>
             <small class="center"><%= @recipe.chef.chefs_name.capitalize %></small>

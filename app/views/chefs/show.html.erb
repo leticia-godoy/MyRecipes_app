@@ -6,6 +6,9 @@
     </div>
 </div>
 
-<h4 align="center"><%= @chef.chefs_name %>'s recipes </h4>
-
-<%= render 'recipes/recipe', obj: @chef.recipes%>
+<% if @chef.recipes.count != 0%>
+    <h4 align="center"><%= @chef.chefs_name %>'s recipes </h4>
+    <%= render 'recipes/recipe', obj: @chef.recipes%>
+<% else %>
+    <h4 align="center"> <%=@chef.chefs_name%> has no recipes yet! </h4>
+<% end %>
