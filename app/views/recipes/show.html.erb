@@ -6,6 +6,10 @@
     <hr />
     <h5><strong>Selling Price: </strong><%= @recipe.sell_price %>g</h5>
 
+    <% if @recipe.ingredients.any? %>
+        <p>Ingredients: <%= render @recipe.ingredients %></p>
+    <% end %>
+
     <div class="pull-right">
         <p><strong>Created by:</strong></p>
         <p class="center">
