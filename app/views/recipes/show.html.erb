@@ -55,7 +55,7 @@
         <div class="col-md-8 col-md-offset-2">
             <h4>Give us your opinion!</h4>
             <hr />
-            <%= form_for([@recipe, @comment], :html => {class: "form-horizontal", 
+            <%= form_for([@recipe, @comment], remote: true , :html => {class: "form-horizontal", 
                                                     role: "form"}) do |f| %>
             <div class="form-group">
                 <div class="control-label col-md-2">

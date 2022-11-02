@@ -8,3 +8,4 @@ import "controllers"
 
 //= require bootstrap-sprockets
 
+import "channels"
